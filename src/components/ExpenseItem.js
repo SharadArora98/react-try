@@ -1,7 +1,16 @@
-function ExpenseItem() {
+import ExpenseDate from "./ExpenseDate";
+
+function ExpenseItem(props) {
     return (
-        <h2>Expense 1</h2>
-    )
+        <div className='expense-item'>
+            <ExpenseDate date={props.expense.date}/>
+            <div className='expense-item__description'>
+                <h2>{props.expense.title}</h2>
+                <div className='expense-item__price'>${props.expense.amount}</div>
+            </div>
+            <hr></hr>
+        </div>
+    );
 }
 
 export default ExpenseItem;
